@@ -1,7 +1,6 @@
 Modelimi i të Dhënave
 •	Objektiv: Përfaqësimi i detyrave në MongoDB duke përdorur Mongoose.
-•	Implementimi:
-  Është krijuar një model Mongoose për të përfaqësuar detyrat në MongoDB. Kjo përfshin fushat e nevojshme si emri i detyrës, përshkrimi, data e krijimit, prioriteti, statusi, dhe informacione të tjera relevante.
+•	Implementimi:Është krijuar një model Mongoose për të përfaqësuar detyrat në MongoDB. Kjo përfshin fushat e nevojshme si emri i detyrës, përshkrimi, data e krijimit, prioriteti, statusi, dhe informacione të tjera relevante.
 •	Përdorimi i lidhjeve në mes të modeleve për të përfaqësuar marrëdhëniet midis detyrave dhe të tjerëve.
 •	Shembull Kode:
 const mongoose = require('mongoose');
