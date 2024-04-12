@@ -32,6 +32,36 @@ router.post("/", async (req, res) => {
     }
 });
 
+// Update a task
+router.patch("/:id", getTask, async (req, res) => {
+    if (req.body.title != null) {
+        res.task.title = req.body.title;
+    }
+    if (req.body.description != null) {
+        res.task.description = req.body.description;
+    }
+    if (req.body.completed != null) {
+        res.task.completed = req.body.completed;
+    }
+
+    try {
+        const updatedTask = await res.task.save();
+        res.json(updatedTask);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+// Delete a task
+router.delete("/:id", getTask, async (req, res) => {
+    try {
+        await res.task.remove();
+        res.json({ message: "Task deleted" });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 async function getTask(req, res, next) {
     try {
         const task = await Task.findById(req.params.id);
