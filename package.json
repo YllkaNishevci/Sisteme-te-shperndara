@@ -1,0 +1,23 @@
+{
+  "name": "Sisteme-te-shperndara",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.1",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "dependencies": {
+    "mongoose": "^8.3.1"
+  },
+  "babel": {
+    "presets": ["@babel/preset-react"]
+ 
+    },
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+    
+  }
