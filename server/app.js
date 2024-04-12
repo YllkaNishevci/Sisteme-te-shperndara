@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-
+//me permiresu connection me db ne atl
 mongoose
   .connect("mongodb://localhost:27017/task-manager")
   .then(() => {
