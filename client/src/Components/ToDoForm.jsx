@@ -19,5 +19,20 @@ const ToDoForm = () => {
         dispatch(addNewTodo(text))
         setText("")
     }
+
+    // we used onInputChange to find out the value written inn input field 
+
+    const onInputChange = (e) => {
+        // console.log(e.target.value)
+        setText(e.target.value)
+    }
+
+
+    return(
+        <form action="submit" className="form" onSubmit={onFormSubmit}>
+            <input type="text" placeholder="Enter your todo...." className="input" onChange={onInputChange} value={text}/>
+        </form>
+    )
 }
+
 export default ToDoForm ;
