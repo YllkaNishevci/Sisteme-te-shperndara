@@ -13,11 +13,11 @@
     "mongoose": "^8.3.1"
   },
   "babel": {
-    "presets": ["@babel/preset-react"]
- 
-    },
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
-    
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
   }
+}
