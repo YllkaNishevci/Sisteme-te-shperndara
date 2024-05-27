@@ -10,6 +10,17 @@ import Tabs from "./Tabs";
 import { ALL_TODO,DONE_TODO,ACTIVE_TODO } from "../Redux/actions/type";
 export const Todos = () => {
 
+    const Todo = ({ todo }) => {
+
+    const[editing,setEditing] = useState(false);
+    const [text,setText] = useState(todo.data)
+    const dispatch = useDispatch();
+    const onFormSubmit = (e) => {
+        e.preventDefault()
+        setEditing(prevstate => !prevstate)
+        dispatch(updateTodo(todo._id,text))
+    }
+
     const dispatch = useDispatch();
 
 
