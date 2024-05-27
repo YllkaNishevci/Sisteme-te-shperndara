@@ -20,6 +20,15 @@ export const Todos = () => {
         setEditing(prevstate => !prevstate)
         dispatch(updateTodo(todo._id,text))
     }
+         return(
+        <div>
+            <li className="task" 
+            onClick={()=> dispatch(toggleTodo(todo._id))}
+            style={{
+                textDecoration: todo.done ? 'line-through' : "",
+                color: todo.done ? '#bdc3c7' : '#34495e'
+            }}
+            >
 
     const dispatch = useDispatch();
 
