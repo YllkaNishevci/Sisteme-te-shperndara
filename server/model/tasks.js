@@ -1,26 +1,22 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const taskSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  description: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  completed: {
-    type: Boolean,
-    default: false,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+// here we will validate the data fro frontend 
 
-const Task = mongoose.model("Task", taskSchema);
+const TodoSchema = new mongoose.Schema({
+    data : {
+        type:String,
+        required : true
+    },
+    done:{
+        type:Boolean,
+        default: false
+    },
+    createdAt:{
+        type : Date,
+        default : Date.now
+    }
+})
 
-module.exports = Task
+const todo = mongoose.model('todo',TodoSchema)
+
+export default todo;
