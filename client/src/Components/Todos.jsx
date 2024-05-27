@@ -29,6 +29,27 @@ export const Todos = () => {
                 color: todo.done ? '#bdc3c7' : '#34495e'
             }}
             >
+                  <span style={{ display : editing ? "none" : ""}}>{todo.data}</span>
+                <form
+                style={{display: editing ? "inline" : "none"}}
+                onSubmit={onFormSubmit}
+                >
+                    <input type="text" 
+                    value={text}
+                    className="edit-todo"
+                    onChange={(e)=> setText(e.target.value)}
+                    />
+                </form>
+                <span className="icon" onClick={()=>dispatch(deleteTodo(todo._id))}>
+                    <i className="fas fa-trash"/>
+                </span>
+                <span className="icon" onClick={()=>setEditing(prevstate => !prevstate)}>
+                    <i className="fas fa-pen"/>
+                </span>
+            </li>
+        </div>
+    )
+}
 
     const dispatch = useDispatch();
 
